@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8"/>
+	<title></title>
+<style>
+	.firkant{
+		width: 100px;
+		height: 100px;
+		margin: 30px;
+		margin-left: 0px;
+		background-color: blue;
+		transition:margin-left 3s;
+		transition-timing-function: ease-in-out;
+		transition: all 3s;
+	}
+	.flyttHoyre{
+		margin-left: 50%;
+		border-radius: 50%;
+		background-color: red;
+	}
+	.flyttVenstre{
+		margin-left: 0px;
+		background-color: green;
+	}
+	.hoyde{
+		width: 50px;
+		height: 50px;
+	}
+	.tilbake{
+		width: 150px;
+		height: 150px;
+	}
+</style>
+</head>
+<body>
+	<div class="firkant"></div>
+	<button id="knapp">Start</button>
+<script>
+	var firkantEl = document.querySelector(".firkant");
+	var knappEl= document.querySelector("#knapp");
+	
+	knappEl.addEventListener("click", knappFunksjon);
+		function knappFunksjon(){
+			if(knappEl.innerHTML === "Start"){
+				knappEl.innerHTML = "Tilbake";
+				firkantEl.classList.remove("flyttVenstre");
+				firkantEl.classList.add("flyttHoyre");
+				firkantEl.classList.add("hoyde");
+				
+			}
+			else{
+				knappEl.innerHTML = "Start";
+				firkantEl.classList.remove("flyttHoyre");
+				firkantEl.classList.add("flyttVenstre");
+				firkantEl.classList.remove("hoyde");
+				firkantEl.classList.add("tilbake");
+			}
+		}
+</script>
+</body>
+</html>
